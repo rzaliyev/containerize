@@ -13,6 +13,6 @@ FROM bin-unix AS bin-linux
 FROM bin-unix AS bin-darwin
 
 FROM scratch AS bin-windows
-COPY --from=build /out/example /example.example
+COPY --from=build /out/example /example.exe
 
 FROM bin-${TARGETOS} as bin
