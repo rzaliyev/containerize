@@ -11,3 +11,7 @@ bin/example:
 .PHONY: unit-test
 unit-test:
 	DOCKER_BUILDKIT=1 docker build . --target unit-test
+
+.PHONY: lint
+lint:
+	DOCKER_BUILDKIT=1 docker build . --target lint
