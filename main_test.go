@@ -7,13 +7,15 @@ import (
 )
 
 func TestEcho(t *testing.T) {
-	// Test happy path
-	err := echo([]string{"bin-name", "hello", "world!"})
-	require.NoError(t, err)
-}
 
-func TestEchoErrorNoArgs(t *testing.T) {
-	// Test empty arguments
-	err := echo([]string{})
-	require.Error(t, err)
+	t.Run("testing happy paht", func(t *testing.T) {
+		err := echo([]string{"bin-name", "hello", "world!"})
+		require.NoError(t, err)
+	})
+
+	t.Run("testing no args error", func(t *testing.T) {
+		err := echo([]string{})
+		require.Error(t, err)
+	})
+
 }
