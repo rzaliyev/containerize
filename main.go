@@ -1,3 +1,4 @@
+// this is the package from https://www.docker.com/blog/tag/go-env-series/
 package main
 
 import (
