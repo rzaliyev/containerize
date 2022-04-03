@@ -4,6 +4,10 @@ PLATFORM=local
 
 .PHONY: bin/example
 bin/example:
-	@docker build . --target bin \
+	DOCKER_BUILDKIT=1 docker build . --target bin \
 	--output bin/ \
 	--platform ${PLATFORM}
+
+.PHONY: unit-test
+unit-test:
+	DOCKER_BUILDKIT=1 docker build . --target unit-test
